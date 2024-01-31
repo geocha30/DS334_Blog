@@ -1,0 +1,16 @@
+{
+  "hash": "724167df3e8d199743f88d9c5a572cba",
+  "result": {
+    "markdown": "---\ntitle: \"Welcome To My Blog\"\nauthor: \"George Charalambous\"\ndate: \"2024-01-31\"\ncategories: [news]\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nggplot(data = penguins, aes(x = bill_length_mm))+\n  geom_histogram(color = \"black\", fill = \"white\")\n```\n\n::: {.cell-output-display}\n![](description_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "description_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

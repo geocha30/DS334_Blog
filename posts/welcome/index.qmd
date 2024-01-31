@@ -1,0 +1,12 @@
+---
+title: "Welcome To My Blog"
+author: "George Charalambous"
+date: "2024-01-31"
+categories: [news]
+---
+
+Welcome to my personal blog! I am George Charalambous, an international student athlete majoring in Data Science at St. Lawrence University. 
+
+![](thumbnail.jpg)
+
+Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
