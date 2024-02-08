@@ -1,0 +1,30 @@
+---
+title: "Has Formula 1 Become Slower?"
+author: "George Charalambous"
+date: "2024-01-31"
+categories: [racing, cars]
+---
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+lap_times <- read.csv("data/formula1/lap_times.csv")
+drivers <- read.csv("data/formula1/drivers.csv")
+races <- read.csv("data/formula1/races.csv")
+```
+
+```{r}
+semifull_df <- left_join(lap_times, drivers, by = "driverId")
+full_df <- left_join(semifull_df, races, by = "raceId")
+full_df <- full_df |>
+  select(-c(1, 2, 6, 8, 12:14, 16, 17, 19:31))
+```
+
+```{r}
+full_df |>
+  group_by(name, code)
+```
+
