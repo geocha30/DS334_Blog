@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -144,13 +178,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction:</a></li>
-  <li><a href="#transition-to-hybrid-power" id="toc-transition-to-hybrid-power" class="nav-link" data-scroll-target="#transition-to-hybrid-power">Transition to Hybrid Power:</a></li>
-  <li><a href="#regulatory-changes" id="toc-regulatory-changes" class="nav-link" data-scroll-target="#regulatory-changes">Regulatory Changes:</a></li>
-  <li><a href="#analyzing-lap-times" id="toc-analyzing-lap-times" class="nav-link" data-scroll-target="#analyzing-lap-times">Analyzing Lap Times:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#transition-to-hybrid-power" id="toc-transition-to-hybrid-power" class="nav-link" data-scroll-target="#transition-to-hybrid-power">Transition to Hybrid Power</a></li>
+  <li><a href="#regulatory-changes" id="toc-regulatory-changes" class="nav-link" data-scroll-target="#regulatory-changes">Regulatory Changes</a></li>
+  <li><a href="#analyzing-lap-times" id="toc-analyzing-lap-times" class="nav-link" data-scroll-target="#analyzing-lap-times">Analyzing Lap Times</a></li>
   <li><a href="#drivers-approach" id="toc-drivers-approach" class="nav-link" data-scroll-target="#drivers-approach">Drivers Approach</a></li>
   <li><a href="#track-approach" id="toc-track-approach" class="nav-link" data-scroll-target="#track-approach">Track Approach</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#conclusion-and-connections-to-class" id="toc-conclusion-and-connections-to-class" class="nav-link" data-scroll-target="#conclusion-and-connections-to-class">Conclusion and Connections to Class</a></li>
   </ul>
 </nav>
     </div>
@@ -162,27 +196,127 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Lets talk Formula 1!</p>
 <section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction:</h2>
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Formula 1, the pinnacle of motor sport, has undergone significant changes over the years, particularly in the design and technology of its cars. These changes have been driven by a desire to enhance safety, improve competition, and push the boundaries of engineering innovation. From the astounding V8 engines to the introduction of hybrid power units, Formula 1 has continuously evolved to meet the demands of both fans and stakeholders alike. In this analysis, we will delve into the rich data set of Formula 1 lap times to explore how the performance of these cars has evolved over the years through the technological advancements that have shaped the sport.</p>
 <p>Throughout its history, Formula 1 has witnessed several eras characterized by distinct technological features. For instance, the era of naturally aspirated V8 engines, which spanned from 2006 to 2013, showcased the raw power and distinct sound signature of these high-revving power units. Cars from this period, such as the Ferrari F2008 and the Red Bull RB7, set blistering lap times on iconic circuits around the world.</p>
 </section>
 <section id="transition-to-hybrid-power" class="level2">
-<h2 class="anchored" data-anchor-id="transition-to-hybrid-power">Transition to Hybrid Power:</h2>
+<h2 class="anchored" data-anchor-id="transition-to-hybrid-power">Transition to Hybrid Power</h2>
 <p>However, in recent years, Formula 1 has been making significant steps towards sustainability and efficiency with the introduction of hybrid power units. The V6 turbocharged hybrid era, which began in 2014, marked a significant departure from the traditional combustion engines. Teams like Mercedes and Ferrari invested heavily in hybrid technology, resulting in cars that not only delivered exceptional performance but also improved fuel efficiency and reduced emissions.</p>
 </section>
 <section id="regulatory-changes" class="level2">
-<h2 class="anchored" data-anchor-id="regulatory-changes">Regulatory Changes:</h2>
+<h2 class="anchored" data-anchor-id="regulatory-changes">Regulatory Changes</h2>
 <p>Beyond power units, Formula 1 has also witnessed numerous regulatory changes aimed at enhancing competition and safety. Adjustments to aerodynamic regulations, such as the introduction of the Halo cockpit protection system in 2018, have influenced the handling and performance characteristics of the cars. Moreover, revisions to tire specifications and fuel allowances have further shaped the dynamics of racing, influencing lap times across different circuits and conditions.</p>
 </section>
 <section id="analyzing-lap-times" class="level2">
-<h2 class="anchored" data-anchor-id="analyzing-lap-times">Analyzing Lap Times:</h2>
+<h2 class="anchored" data-anchor-id="analyzing-lap-times">Analyzing Lap Times</h2>
 <p>By leveraging a comprehensive data set found on Kaggle, consolidated by Vopani, a data scientist from India, we will be investing the different trends of lap times throughout the history of the sport. The data set contains information on the races, drivers, constructors, qualifying, circuits, lap times, pit stops, championships from 1950, all the way until Max Verstappen’s dominant season last year. Through statistical analysis and visualization techniques, we will examine trends in lap times, identify key inflection points corresponding to regulatory changes and technological advancements, and assess the impact of external factors such as track conditions and weather. Ultimately, this analysis will provide a comprehensive overview of how Formula 1 cars have evolved in terms of speed, efficiency, and overall performance, underscoring the dynamic nature of the sport. More specifically, we will examine the lap times of the most dominant drivers of each era, by looking into different perspectives, such as individual track times of the winners and lap times of winners throughout the time.</p>
 <p><strong>URL</strong>: https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020/data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lap_times <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/Sixth Semester/DS334_Blog/data/formula1/lap_times.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>drivers <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/Sixth Semester/DS334_Blog/data/formula1/drivers.csv"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>races <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/Sixth Semester/DS334_Blog/data/formula1/races.csv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/Sixth Semester/DS334_Blog/data/formula1/results.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lap_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(lap_times, drivers, <span class="at">by =</span> <span class="st">"driverId"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>races_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(lap_df, races, <span class="at">by =</span> <span class="st">"raceId"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>races_df <span class="ot">&lt;-</span> races_df <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">19</span><span class="sc">:</span><span class="dv">31</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> results <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(races_df, results, <span class="at">by =</span> <span class="st">"driverId"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> full_df <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>, <span class="dv">12</span><span class="sc">:</span><span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Keep the distinct rows and get rid of the multiple duplicates</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> full_df <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(position.x, time.x, forename, surname, year, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> full_df <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Lap Time</span><span class="st">`</span> <span class="ot">=</span> time.x, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Circuit</span><span class="st">`</span> <span class="ot">=</span> name, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Year</span><span class="st">`</span> <span class="ot">=</span> year, </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Position</span><span class="st">`</span> <span class="ot">=</span> position.x) <span class="sc">|&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(Driver, <span class="fu">c</span>(forename, surname), <span class="at">sep =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>testing <span class="ot">&lt;-</span> full_df <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Lap Time</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">Lap Time</span><span class="st">`</span>, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"Minutes"</span>, <span class="st">"Seconds"</span>), <span class="at">sep =</span> <span class="st">":"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(Seconds, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"Seconds"</span>, <span class="st">"Milliseconds"</span>), <span class="at">sep =</span> <span class="sc">+</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>testing<span class="sc">$</span>minutes <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(testing<span class="sc">$</span>Minutes)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>testing<span class="sc">$</span>seconds <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(testing<span class="sc">$</span>Seconds)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>testing<span class="sc">$</span>milliseconds <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(testing<span class="sc">$</span>Milliseconds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>testing <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">minutes_to_Seconds =</span> minutes <span class="sc">*</span> <span class="dv">60</span>, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">milliseconds_to_Seconds =</span> milliseconds <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Lap Time</span><span class="st">`</span> <span class="ot">=</span> minutes_to_Seconds <span class="sc">+</span> seconds <span class="sc">+</span> milliseconds_to_Seconds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="drivers-approach" class="level2">
 <h2 class="anchored" data-anchor-id="drivers-approach">Drivers Approach</h2>
 <p>For the second part of the analysis, we will shift our focus to the drivers themselves, regardless of circuit. We will investigate the lap times of the drivers within 10-year increments, pursuing further evidence to our initial question.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>all_drivers_df <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Driver))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>all_drivers_df <span class="ot">&lt;-</span> all_drivers_df <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Decade =</span> <span class="fu">case_when</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">1950</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;</span> <span class="dv">1960</span> <span class="sc">~</span> <span class="st">"1950s"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">1960</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;</span> <span class="dv">1970</span> <span class="sc">~</span> <span class="st">"1960s"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">1970</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;</span> <span class="dv">1980</span> <span class="sc">~</span> <span class="st">"1970s"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">1980</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;</span> <span class="dv">1990</span> <span class="sc">~</span> <span class="st">"1980s"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">1990</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;</span> <span class="dv">2000</span> <span class="sc">~</span> <span class="st">"1990s"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">2000</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;</span> <span class="dv">2010</span> <span class="sc">~</span> <span class="st">"2000s"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">2010</span> <span class="sc">&amp;</span> Year <span class="sc">&lt;</span> <span class="dv">2020</span> <span class="sc">~</span> <span class="st">"2010s"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"2020s"</span>  <span class="co"># Handling future data</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Decade, Driver) <span class="sc">|&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">Average Lap Time</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Lap Time</span><span class="st">`</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> all_drivers_df, </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Decade, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">`</span><span class="at">Average Lap Time</span><span class="st">`</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> Decade)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Average Lap Times for Drivers in 10-Year Increments"</span>, </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Decade"</span>, </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Average Lap Time (seconds)"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Decade"</span>) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">140</span>))<span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set3"</span>) <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),  </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),  </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="formula_1_files/figure-html/Visualizations-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -193,15 +327,44 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="track-approach">Track Approach</h2>
 <p>Next, we delve deeper into track-specific analysis by focusing on podium finishers. Filtering the dataset to include only drivers who finished first, second, or third, we calculate the average lap times for each circuit. Our analysis centers on four iconic circuits—British Grand Prix (Silverstone), Monaco Grand Prix (Monaco), Belgian Grand Prix (Spa), and Italian Grand Prix (Monza)—which have been fixtures on the Formula 1 calendar since its inception.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>track_df <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Position <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> Position <span class="sc">==</span> <span class="dv">2</span> <span class="sc">|</span> Position <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, Circuit) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">Average Lap Time</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Lap Time</span><span class="st">`</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Circuit <span class="sc">==</span> <span class="st">"British Grand Prix"</span><span class="sc">|</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>         Circuit <span class="sc">==</span> <span class="st">"Belgian Grand Prix"</span><span class="sc">|</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>         Circuit <span class="sc">==</span> <span class="st">"Italian Grand Prix"</span><span class="sc">|</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>         Circuit <span class="sc">==</span> <span class="st">"Monaco Grand Prix"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> track_df, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Year, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="st">`</span><span class="at">Average Lap Time</span><span class="st">`</span>, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> Circuit)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>Circuit)<span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Average Lap Times of the Podium Drivers Over the Years"</span>, </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Average Lap Time (seconds)"</span>) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">180</span>))<span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">substr</span>(x, <span class="dv">3</span>, <span class="dv">4</span>)) <span class="sc">+</span>  </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),  </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"ivory"</span>),  </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="formula_1_files/figure-html/Track Approach Graph-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Through further examination of the data, shifting our focus to the circuits and the top three finishers, interersting patterns begin to emerge. As depicted in the graph, the average lap times for the podium sitters exhibit a consistent downward trend over time. This trend is indicative of the sport’s continuous evolution. Notably, while occasional peaks may appear in the data, they often correspond to specific race incidents necessitating safety car deployments, such as the occurrence witnessed in Spa 2021.</p>
+<p>Through further examination of the data, shifting our focus to the circuits and the top three finishers, interesting patterns begin to emerge. As depicted in the graph, the average lap times for the podium sitters exhibit a consistent downward trend over time. This trend is indicative of the sport’s continuous evolution. Notably, while occasional peaks may appear in the data, they often correspond to specific race incidents necessitating safety car deployments, such as the occurrence witnessed in Spa 2021.</p>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<section id="conclusion-and-connections-to-class" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-and-connections-to-class">Conclusion and Connections to Class</h2>
 <p>These observations highlight the significant impact of technological advancements and regulatory changes on Formula 1’s pace and competitiveness. From the introduction of hybrid power units to adjustments in aerodynamic regulations and safety measures like the introduction of the Halo cockpit protection system, each modification has played a role in propelling the sport forward. As a result, lap times have steadily decreased over the years, reflecting the relentless drive for innovation and excellence within Formula 1.</p>
+<p>This blog post involves the integration of materials we went over in class. Our exploration of Formula 1 lap times serves as a compelling showcase of fundamental visualization principles. By prioritizing transparency and accuracy in our data representation and leveraging effective encoding techniques such as color and position, we enhance the clarity and interpretability of our analysis. The patterns highlight the pivotal role of gestalt principles in data perception, by prioritizing relative comparisons with stable baselines, like the side-by-side box plots and the line graphs for the fluctuations of lap times across the passing of the years. Moreover, our attention to the data-to-ink ratio ensures that our visualizations strike a balance between conciseness and informativeness, as evidenced by the use of graphical elements in our plots. The observed trends in lap times over different decades emphasizes the continual refinement and learning process that underpins the creation of impactful insights. By embracing these core visualization concepts in our analysis, which integrate materials covered in class discussions, we enhance our comprehension of Formula 1 lap times and our capacity to convey insights effectively in future analyses.</p>
 
 
 </section>
