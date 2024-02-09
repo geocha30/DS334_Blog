@@ -56,6 +56,13 @@
     "text": "Track Approach\nNext, we delve deeper into track-specific analysis by focusing on podium finishers. Filtering the dataset to include only drivers who finished first, second, or third, we calculate the average lap times for each circuit. Our analysis centers on four iconic circuits—British Grand Prix (Silverstone), Monaco Grand Prix (Monaco), Belgian Grand Prix (Spa), and Italian Grand Prix (Monza)—which have been fixtures on the Formula 1 calendar since its inception.\n\n\n\n\n\nThrough further examination of the data, shifting our focus to the circuits and the top three finishers, interersting patterns begin to emerge. As depicted in the graph, the average lap times for the podium sitters exhibit a consistent downward trend over time. This trend is indicative of the sport’s continuous evolution. Notably, while occasional peaks may appear in the data, they often correspond to specific race incidents necessitating safety car deployments, such as the occurrence witnessed in Spa 2021."
   },
   {
+    "objectID": "posts/first_blog_post/formula_1.html#conclusion",
+    "href": "posts/first_blog_post/formula_1.html#conclusion",
+    "title": "Has Formula 1 Become Slower?",
+    "section": "Conclusion",
+    "text": "Conclusion\nThese observations highlight the significant impact of technological advancements and regulatory changes on Formula 1’s pace and competitiveness. From the introduction of hybrid power units to adjustments in aerodynamic regulations and safety measures like the introduction of the Halo cockpit protection system, each modification has played a role in propelling the sport forward. As a result, lap times have steadily decreased over the years, reflecting the relentless drive for innovation and excellence within Formula 1."
+  },
+  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
@@ -68,12 +75,5 @@
     "title": "My Personal Blog!",
     "section": "",
     "text": "Has Formula 1 Become Slower?\n\n\n\n\n\n\n\nracing\n\n\ncars\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 31, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/first_blog_post/formula_1.html#conclusion",
-    "href": "posts/first_blog_post/formula_1.html#conclusion",
-    "title": "Has Formula 1 Become Slower?",
-    "section": "Conclusion",
-    "text": "Conclusion\nThese observations highlight the significant impact of technological advancements and regulatory changes on Formula 1’s pace and competitiveness. From the introduction of hybrid power units to adjustments in aerodynamic regulations and safety measures like the introduction of the Halo cockpit protection system, each modification has played a role in propelling the sport forward. As a result, lap times have steadily decreased over the years, reflecting the relentless drive for innovation and excellence within Formula 1."
   }
 ]
