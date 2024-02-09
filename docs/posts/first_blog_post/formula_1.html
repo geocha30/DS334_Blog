@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="George Charalambous">
-<meta name="dcterms.date" content="2024-01-31">
+<meta name="dcterms.date" content="2024-02-08">
 
 <title>Data Visualization Blog Spring 2024 - Has Formula 1 Become Slower?</title>
 <style>
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 31, 2024</p>
+        <p class="date">February 8, 2024</p>
       </div>
     </div>
     
@@ -140,15 +140,72 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction:</a></li>
+  <li><a href="#transition-to-hybrid-power" id="toc-transition-to-hybrid-power" class="nav-link" data-scroll-target="#transition-to-hybrid-power">Transition to Hybrid Power:</a></li>
+  <li><a href="#regulatory-changes" id="toc-regulatory-changes" class="nav-link" data-scroll-target="#regulatory-changes">Regulatory Changes:</a></li>
+  <li><a href="#analyzing-lap-times" id="toc-analyzing-lap-times" class="nav-link" data-scroll-target="#analyzing-lap-times">Analyzing Lap Times:</a></li>
+  <li><a href="#drivers-approach" id="toc-drivers-approach" class="nav-link" data-scroll-target="#drivers-approach">Drivers Approach</a></li>
+  <li><a href="#track-approach" id="toc-track-approach" class="nav-link" data-scroll-target="#track-approach">Track Approach</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<p>Lets talk Formula 1!</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction:</h2>
+<p>Formula 1, the pinnacle of motor sport, has undergone significant changes over the years, particularly in the design and technology of its cars. These changes have been driven by a desire to enhance safety, improve competition, and push the boundaries of engineering innovation. From the astounding V8 engines to the introduction of hybrid power units, Formula 1 has continuously evolved to meet the demands of both fans and stakeholders alike. In this analysis, we will delve into the rich data set of Formula 1 lap times to explore how the performance of these cars has evolved over the years through the technological advancements that have shaped the sport.</p>
+<p>Throughout its history, Formula 1 has witnessed several eras characterized by distinct technological features. For instance, the era of naturally aspirated V8 engines, which spanned from 2006 to 2013, showcased the raw power and distinct sound signature of these high-revving power units. Cars from this period, such as the Ferrari F2008 and the Red Bull RB7, set blistering lap times on iconic circuits around the world.</p>
+</section>
+<section id="transition-to-hybrid-power" class="level2">
+<h2 class="anchored" data-anchor-id="transition-to-hybrid-power">Transition to Hybrid Power:</h2>
+<p>However, in recent years, Formula 1 has been making significant steps towards sustainability and efficiency with the introduction of hybrid power units. The V6 turbocharged hybrid era, which began in 2014, marked a significant departure from the traditional combustion engines. Teams like Mercedes and Ferrari invested heavily in hybrid technology, resulting in cars that not only delivered exceptional performance but also improved fuel efficiency and reduced emissions.</p>
+</section>
+<section id="regulatory-changes" class="level2">
+<h2 class="anchored" data-anchor-id="regulatory-changes">Regulatory Changes:</h2>
+<p>Beyond power units, Formula 1 has also witnessed numerous regulatory changes aimed at enhancing competition and safety. Adjustments to aerodynamic regulations, such as the introduction of the Halo cockpit protection system in 2018, have influenced the handling and performance characteristics of the cars. Moreover, revisions to tire specifications and fuel allowances have further shaped the dynamics of racing, influencing lap times across different circuits and conditions.</p>
+</section>
+<section id="analyzing-lap-times" class="level2">
+<h2 class="anchored" data-anchor-id="analyzing-lap-times">Analyzing Lap Times:</h2>
+<p>By leveraging a comprehensive data set found on Kaggle, consolidated by Vopani, a data scientist from India, we will be investing the different trends of lap times throughout the history of the sport. The data set contains information on the races, drivers, constructors, qualifying, circuits, lap times, pit stops, championships from 1950, all the way until Max Verstappen’s dominant season last year. Through statistical analysis and visualization techniques, we will examine trends in lap times, identify key inflection points corresponding to regulatory changes and technological advancements, and assess the impact of external factors such as track conditions and weather. Ultimately, this analysis will provide a comprehensive overview of how Formula 1 cars have evolved in terms of speed, efficiency, and overall performance, underscoring the dynamic nature of the sport. More specifically, we will examine the lap times of the most dominant drivers of each era, by looking into different perspectives, such as individual track times of the winners and lap times of winners throughout the time.</p>
+<p><strong>URL</strong>: https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020/data</p>
+</section>
+<section id="drivers-approach" class="level2">
+<h2 class="anchored" data-anchor-id="drivers-approach">Drivers Approach</h2>
+<p>For the second part of the analysis, we will shift our focus to the drivers themselves, regardless of circuit. We will investigate the lap times of the drivers within 10-year increments, pursuing further evidence to our initial question.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="formula_1_files/figure-html/Visualizations-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Through the examination of the graph, no pattern can be seen in the lap times of the drivers across the decades. No significant fluctuations in lap times were observed over the years. The average lap times of the drivers stayed right around 100 seconds, with the majority of the times being around that number as well. No major outlines were observed, which would not change our findings, since they depend on safety car implications, that might involve crashes, flags, etc.</p>
+</section>
+<section id="track-approach" class="level2">
+<h2 class="anchored" data-anchor-id="track-approach">Track Approach</h2>
+<p>Next, we delve deeper into track-specific analysis by focusing on podium finishers. Filtering the dataset to include only drivers who finished first, second, or third, we calculate the average lap times for each circuit. Our analysis centers on four iconic circuits—British Grand Prix (Silverstone), Monaco Grand Prix (Monaco), Belgian Grand Prix (Spa), and Italian Grand Prix (Monza)—which have been fixtures on the Formula 1 calendar since its inception.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="formula_1_files/figure-html/Track Approach Graph-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Through further examination of the data, shifting our focus to the circuits and the top three finishers, interersting patterns begin to emerge. As depicted in the graph, the average lap times for the podium sitters exhibit a consistent downward trend over time. This trend is indicative of the sport’s continuous evolution. Notably, while occasional peaks may appear in the data, they often correspond to specific race incidents necessitating safety car deployments, such as the occurrence witnessed in Spa 2021.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>These observations highlight the significant impact of technological advancements and regulatory changes on Formula 1’s pace and competitiveness. From the introduction of hybrid power units to adjustments in aerodynamic regulations and safety measures like the introduction of the Halo cockpit protection system, each modification has played a role in propelling the sport forward. As a result, lap times have steadily decreased over the years, reflecting the relentless drive for innovation and excellence within Formula 1.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
