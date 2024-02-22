@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="George Charalambous">
-<meta name="dcterms.date" content="2024-02-08">
+<meta name="dcterms.date" content="2024-02-19">
 
-<title>Data Visualization Blog Spring 2024 - Oh Mamma Mia!</title>
+<title>Data Visualization Blog Spring 2024 - Alcohol and Ladder Scores</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -65,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -107,10 +141,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Oh Mamma Mia!</h1>
+      <h1 class="title">Alcohol and Ladder Scores</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">racing</div>
-                <div class="quarto-category">cars</div>
+                <div class="quarto-category">statistics</div>
+                <div class="quarto-category">world</div>
               </div>
                   </div>
   </div>
@@ -128,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 8, 2024</p>
+        <p class="date">February 19, 2024</p>
       </div>
     </div>
     
@@ -139,15 +173,96 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#alcohol-consumption-patterns-and-perspectives" id="toc-alcohol-consumption-patterns-and-perspectives" class="nav-link" data-scroll-target="#alcohol-consumption-patterns-and-perspectives">Alcohol Consumption: Patterns and Perspectives</a></li>
+  <li><a href="#exploring-the-relationship-factors-and-findings" id="toc-exploring-the-relationship-factors-and-findings" class="nav-link" data-scroll-target="#exploring-the-relationship-factors-and-findings">Exploring the Relationship: Factors and Findings</a></li>
+  <li><a href="#distribution-of-the-two-main-alcoholic-drinks" id="toc-distribution-of-the-two-main-alcoholic-drinks" class="nav-link" data-scroll-target="#distribution-of-the-two-main-alcoholic-drinks">Distribution of The Two Main Alcoholic Drinks</a></li>
+  <li><a href="#distribution-of-wine-consumption-in-the-globe" id="toc-distribution-of-wine-consumption-in-the-globe" class="nav-link" data-scroll-target="#distribution-of-wine-consumption-in-the-globe">Distribution of wine consumption in the globe</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Understanding the relationship between alcohol consumption and subjective well-being, as measured by ladder scores, is a topic of growing interest in social science research. Ladder scores, often used as a proxy for overall life satisfaction and happiness, provide valuable insights into individuals’ subjective perceptions of their own well-being. Exploring the potential link between alcohol consumption and ladder scores offers an opportunity to examine how drinking behaviors may influence individuals’ overall happiness and life satisfaction.</p>
+</section>
+<section id="alcohol-consumption-patterns-and-perspectives" class="level2">
+<h2 class="anchored" data-anchor-id="alcohol-consumption-patterns-and-perspectives">Alcohol Consumption: Patterns and Perspectives</h2>
+<p>Alcohol consumption, deeply ingrained in human culture, exhibits diverse patterns and perspectives across different societies and demographics. From cultural rituals to social gatherings, alcohol plays multifaceted roles in shaping social interactions and experiences. Understanding the nuances of alcohol consumption, including frequency, quantity, and cultural context, is essential for analyzing its potential impact on ladder scores and subjective well-being.</p>
+</section>
+<section id="exploring-the-relationship-factors-and-findings" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-the-relationship-factors-and-findings">Exploring the Relationship: Factors and Findings</h2>
+<p>As researchers delve into the relationship between alcohol consumption and ladder scores, they must consider various factors that may influence this association. Socio-economic status, cultural norms, and individual characteristics are among the many variables that could mediate or moderate the link between alcohol consumption and subjective well-being. By analyzing empirical data and conducting robust statistical analyses, researchers can uncover nuanced insights into the complex interplay between alcohol consumption and ladder scores.</p>
+<p><strong>URLs</strong>: https://www.kaggle.com/datasets/thedevastator/relationship-between-alcohol-consumption-and-lif/data https://www.kaggle.com/code/fahadmehfoooz/world-happiness/input</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>alcohol_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/drinks.csv"</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>world_df <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"world"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">fct_recode</span>(region, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"United Kingdom"</span> <span class="ot">=</span> <span class="st">"UK"</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>world_hpi_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/world-happiness-report-2021.csv"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">fct_recode</span>(<span class="st">`</span><span class="at">Country name</span><span class="st">`</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"USA"</span> <span class="ot">=</span> <span class="st">"United States"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>spirit_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(alcohol_df, world_df, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"country"</span> <span class="ot">=</span> <span class="st">"region"</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(spirit_df, world_hpi_df, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"country"</span> <span class="ot">=</span> <span class="st">"Country name"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="distribution-of-the-two-main-alcoholic-drinks" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-the-two-main-alcoholic-drinks">Distribution of The Two Main Alcoholic Drinks</h2>
+<section id="distribution-of-consumption-total-litres-of-alcohol" class="level4">
+<h4 class="anchored" data-anchor-id="distribution-of-consumption-total-litres-of-alcohol">Distribution of consumption total litres of alcohol</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> full_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group))<span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total_litres_of_pure_alcohol))<span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"mercator"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">180</span>, <span class="dv">180</span>))<span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="alcohol_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="distribution-of-beer-consumption-in-the-globe" class="level4">
+<h4 class="anchored" data-anchor-id="distribution-of-beer-consumption-in-the-globe">Distribution of beer consumption in the globe</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> full_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group))<span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> beer_servings))<span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"mercator"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">180</span>, <span class="dv">180</span>))<span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="alcohol_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="distribution-of-wine-consumption-in-the-globe" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-wine-consumption-in-the-globe">Distribution of wine consumption in the globe</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> full_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group))<span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> wine_servings))<span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_map</span>(<span class="at">projection =</span> <span class="st">"mercator"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">180</span>, <span class="dv">180</span>))<span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="alcohol_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

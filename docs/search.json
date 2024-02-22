@@ -70,10 +70,52 @@
     "text": "Welcome to my personal blog! I am George Charalambous, an international student athlete majoring in Data Science at St. Lawrence University.\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
+    "objectID": "posts/second_blog_post/alcohol.html",
+    "href": "posts/second_blog_post/alcohol.html",
+    "title": "Alcohol and Ladder Scores",
+    "section": "",
+    "text": "Understanding the relationship between alcohol consumption and subjective well-being, as measured by ladder scores, is a topic of growing interest in social science research. Ladder scores, often used as a proxy for overall life satisfaction and happiness, provide valuable insights into individuals’ subjective perceptions of their own well-being. Exploring the potential link between alcohol consumption and ladder scores offers an opportunity to examine how drinking behaviors may influence individuals’ overall happiness and life satisfaction."
+  },
+  {
+    "objectID": "posts/second_blog_post/alcohol.html#introduction",
+    "href": "posts/second_blog_post/alcohol.html#introduction",
+    "title": "Alcohol and Ladder Scores",
+    "section": "",
+    "text": "Understanding the relationship between alcohol consumption and subjective well-being, as measured by ladder scores, is a topic of growing interest in social science research. Ladder scores, often used as a proxy for overall life satisfaction and happiness, provide valuable insights into individuals’ subjective perceptions of their own well-being. Exploring the potential link between alcohol consumption and ladder scores offers an opportunity to examine how drinking behaviors may influence individuals’ overall happiness and life satisfaction."
+  },
+  {
+    "objectID": "posts/second_blog_post/alcohol.html#alcohol-consumption-patterns-and-perspectives",
+    "href": "posts/second_blog_post/alcohol.html#alcohol-consumption-patterns-and-perspectives",
+    "title": "Alcohol and Ladder Scores",
+    "section": "Alcohol Consumption: Patterns and Perspectives",
+    "text": "Alcohol Consumption: Patterns and Perspectives\nAlcohol consumption, deeply ingrained in human culture, exhibits diverse patterns and perspectives across different societies and demographics. From cultural rituals to social gatherings, alcohol plays multifaceted roles in shaping social interactions and experiences. Understanding the nuances of alcohol consumption, including frequency, quantity, and cultural context, is essential for analyzing its potential impact on ladder scores and subjective well-being."
+  },
+  {
+    "objectID": "posts/second_blog_post/alcohol.html#exploring-the-relationship-factors-and-findings",
+    "href": "posts/second_blog_post/alcohol.html#exploring-the-relationship-factors-and-findings",
+    "title": "Alcohol and Ladder Scores",
+    "section": "Exploring the Relationship: Factors and Findings",
+    "text": "Exploring the Relationship: Factors and Findings\nAs researchers delve into the relationship between alcohol consumption and ladder scores, they must consider various factors that may influence this association. Socio-economic status, cultural norms, and individual characteristics are among the many variables that could mediate or moderate the link between alcohol consumption and subjective well-being. By analyzing empirical data and conducting robust statistical analyses, researchers can uncover nuanced insights into the complex interplay between alcohol consumption and ladder scores.\nURLs: https://www.kaggle.com/datasets/thedevastator/relationship-between-alcohol-consumption-and-lif/data https://www.kaggle.com/code/fahadmehfoooz/world-happiness/input\n\nlibrary(tidyverse)\nlibrary(here)\n\n\nalcohol_df &lt;- read_csv(here(\"data/drinks.csv\"))\nworld_df &lt;- map_data(\"world\") |&gt;\n  mutate(region = fct_recode(region, \n                             \"United Kingdom\" = \"UK\"))\nworld_hpi_df &lt;- read_csv(here(\"data/world-happiness-report-2021.csv\")) |&gt;\n    mutate(region = fct_recode(`Country name`, \n                             \"USA\" = \"United States\"))\n\n\nspirit_df &lt;- left_join(alcohol_df, world_df, by = c(\"country\" = \"region\"))\nfull_df &lt;- left_join(spirit_df, world_hpi_df, by = c(\"country\" = \"Country name\"))"
+  },
+  {
+    "objectID": "posts/second_blog_post/alcohol.html#distribution-of-the-two-main-alcoholic-drinks",
+    "href": "posts/second_blog_post/alcohol.html#distribution-of-the-two-main-alcoholic-drinks",
+    "title": "Alcohol and Ladder Scores",
+    "section": "Distribution of The Two Main Alcoholic Drinks",
+    "text": "Distribution of The Two Main Alcoholic Drinks\n\nDistribution of consumption total litres of alcohol\n\nggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+\n  geom_polygon(aes(fill = total_litres_of_pure_alcohol))+\n  coord_map(projection = \"mercator\", xlim = c(-180, 180))+\n  scale_fill_viridis_c()\n\n\n\n\n\n\nDistribution of beer consumption in the globe\n\nggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+\n  geom_polygon(aes(fill = beer_servings))+\n  coord_map(projection = \"mercator\", xlim = c(-180, 180))+\n  scale_fill_viridis_c()"
+  },
+  {
+    "objectID": "posts/second_blog_post/alcohol.html#distribution-of-wine-consumption-in-the-globe",
+    "href": "posts/second_blog_post/alcohol.html#distribution-of-wine-consumption-in-the-globe",
+    "title": "Alcohol and Ladder Scores",
+    "section": "Distribution of wine consumption in the globe",
+    "text": "Distribution of wine consumption in the globe\n\nggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+\n  geom_polygon(aes(fill = wine_servings))+\n  coord_map(projection = \"mercator\", xlim = c(-180, 180))+\n  scale_fill_viridis_c()"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "My Personal Blog!",
     "section": "",
-    "text": "Oh Mamma Mia!\n\n\n\n\n\n\n\nracing\n\n\ncars\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nHas Formula 1 Become Slower?\n\n\n\n\n\n\n\nracing\n\n\ncars\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 31, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\nNo matching items"
+    "text": "Alcohol and Ladder Scores\n\n\n\n\n\n\n\nstatistics\n\n\nworld\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nHas Formula 1 Become Slower?\n\n\n\n\n\n\n\nracing\n\n\ncars\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 31, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\nNo matching items"
   }
 ]

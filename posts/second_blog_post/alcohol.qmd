@@ -1,0 +1,81 @@
+---
+title: "Alcohol and Ladder Scores"
+author: "George Charalambous"
+date: "2024-02-19"
+categories: [statistics, world]
+image: "alcohol.jpeg"
+table-of-contents: true
+---
+
+## Introduction
+
+Understanding the relationship between alcohol consumption and subjective well-being, as measured by ladder scores, is a topic of growing interest in social science research. Ladder scores, often used as a proxy for overall life satisfaction and happiness, provide valuable insights into individuals' subjective perceptions of their own well-being. Exploring the potential link between alcohol consumption and ladder scores offers an opportunity to examine how drinking behaviors may influence individuals' overall happiness and life satisfaction.
+
+## Alcohol Consumption: Patterns and Perspectives
+
+Alcohol consumption, deeply ingrained in human culture, exhibits diverse patterns and perspectives across different societies and demographics. From cultural rituals to social gatherings, alcohol plays multifaceted roles in shaping social interactions and experiences. Understanding the nuances of alcohol consumption, including frequency, quantity, and cultural context, is essential for analyzing its potential impact on ladder scores and subjective well-being.
+
+## Exploring the Relationship: Factors and Findings
+
+As researchers delve into the relationship between alcohol consumption and ladder scores, they must consider various factors that may influence this association. Socio-economic status, cultural norms, and individual characteristics are among the many variables that could mediate or moderate the link between alcohol consumption and subjective well-being. By analyzing empirical data and conducting robust statistical analyses, researchers can uncover nuanced insights into the complex interplay between alcohol consumption and ladder scores.
+
+
+__URLs__: https://www.kaggle.com/datasets/thedevastator/relationship-between-alcohol-consumption-and-lif/data
+          https://www.kaggle.com/code/fahadmehfoooz/world-happiness/input 
+```{r}
+#| warning: false
+library(tidyverse)
+library(here)
+```
+
+```{r}
+#| warning: false
+#| output: false
+alcohol_df <- read_csv(here("data/drinks.csv"))
+world_df <- map_data("world") |>
+  mutate(region = fct_recode(region, 
+                             "United Kingdom" = "UK"))
+world_hpi_df <- read_csv(here("data/world-happiness-report-2021.csv")) |>
+    mutate(region = fct_recode(`Country name`, 
+                             "USA" = "United States"))
+```
+
+```{r}
+#| warning: false
+#| output: false
+spirit_df <- left_join(alcohol_df, world_df, by = c("country" = "region"))
+full_df <- left_join(spirit_df, world_hpi_df, by = c("country" = "Country name"))
+```
+
+## Distribution of The Two Main Alcoholic Drinks
+
+#### Distribution of consumption total litres of alcohol
+
+```{r}
+#| warning: false
+ggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+
+  geom_polygon(aes(fill = total_litres_of_pure_alcohol))+
+  coord_map(projection = "mercator", xlim = c(-180, 180))+
+  scale_fill_viridis_c()
+```
+
+#### Distribution of beer consumption in the globe
+
+```{r}
+#| warning: false
+ggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+
+  geom_polygon(aes(fill = beer_servings))+
+  coord_map(projection = "mercator", xlim = c(-180, 180))+
+  scale_fill_viridis_c()
+```
+
+#### Distribution of wine consumption in the globe
+
+```{r}
+#| warning: false
+ggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+
+  geom_polygon(aes(fill = wine_servings))+
+  coord_map(projection = "mercator", xlim = c(-180, 180))+
+  scale_fill_viridis_c()
+```
+
