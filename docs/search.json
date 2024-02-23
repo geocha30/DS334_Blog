@@ -74,7 +74,7 @@
     "href": "posts/second_blog_post/alcohol.html",
     "title": "Alcohol and Society",
     "section": "",
-    "text": "“In dog beers, I’ve only had one.”"
+    "text": "In dog beers, I’ve only had one."
   },
   {
     "objectID": "posts/second_blog_post/alcohol.html#introduction",
@@ -112,13 +112,6 @@
     "text": "Distribution of Alcohol Across the Globe\nAlcohol permeates cultures worldwide, ingrained in the societies across every corner of the globe. As it can be seen in the maps below, its widespread acceptance is evident, with the majority of countries embracing this substance as an integral aspect of daily life. From large cities to remote villages, the consumption of alcohol takes on various forms, reflecting cultural norms, traditions, and social rituals. Diving deeper into the substance itself, these maps shed light on the distinct preferences for different types of alcoholic beverages, showcasing the unique distribution patterns of beer.\n\nDistribution of consumption of total litres of alcohol and beer specifically\n\nggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+\n  geom_polygon(aes(fill = total_litres_of_pure_alcohol))+\n  coord_map(projection = \"mercator\", xlim = c(-180, 180))+\n  scale_fill_viridis_c()+\n  theme_minimal()+\n  labs(\n    title = \"Distribution of Alcohol Across the Globe\",\n    fill = \"Total Litres of Pure Alcohol\", \n    x = \"Longitude\", \n    y = \"Latitude\"\n  )+\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\", hjust = 0.5), \n    plot.background = element_rect(fill = \"ivory\")\n  )\n\n\n\n\n\nggplot(data = full_df, mapping = aes(x = long, y = lat, group = group))+\n  geom_polygon(aes(fill = beer_servings))+\n  coord_map(projection = \"mercator\", xlim = c(-180, 180))+\n  scale_fill_viridis_c()+\n  theme_minimal()+\n  labs(\n    title = \"Distribution of Beer Consumption Across the Globe\",\n    fill = \"Total Litres of Beer\", \n    x = \"Longitude\", \n    y = \"Latitude\"\n  )+\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\", hjust = 0.5), \n    plot.background = element_rect(fill = \"ivory\")\n  )"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Personal Blog!",
-    "section": "",
-    "text": "Alcohol and Society\n\n\n\n\n\n\n\nstatistics\n\n\nworld\n\n\n\n\n\n\n\n\n\n\n\nFeb 22, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nHas Formula 1 Become Slower?\n\n\n\n\n\n\n\nracing\n\n\ncars\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 31, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/second_blog_post/alcohol.html#does-alcohol-have-any-correlation-with-the-quality-of-life",
     "href": "posts/second_blog_post/alcohol.html#does-alcohol-have-any-correlation-with-the-quality-of-life",
     "title": "Alcohol and Society",
@@ -131,5 +124,12 @@
     "title": "Alcohol and Society",
     "section": "Conclusion and Connections to Class",
     "text": "Conclusion and Connections to Class\nIn conclusion, our exploration into the relationship between beer consumption and societal well-being has revealed intriguing patterns. Analyzing ladder scores, GDP per capita, and generosity scores among the top 20 beer-consuming countries unveiled nuanced connections. We found disparities in happiness levels among high beer-consuming countries, prompting further investigation into cultural and economic influences on subjective well-being. While higher beer consumption correlated with lower GDP per capita, the prevalence of negative generosity scores suggests complex societal dynamics. This analysis underscores the need for deeper exploration into the impact of alcohol on individual and societal welfare. Understanding these dynamics can inform targeted interventions aimed at promoting holistic well-being and fostering a more compassionate global community.\nWhile our analysis incorporates geographic coordinates to visualize distributions of alcohol consumption, it extends beyond mapping to encompass various visualizations that effectively communicate our findings. Through scatterplots and bar charts, we present insights into the variability and uncertainty inherent in our data. For instance, geom_errorbar in our scatterplot of ladder scores showcases the uncertainty in the measurement of happiness levels across countries. This approach allows us to express the range of possible values and the level of confidence in our estimates. By employing a diverse range of visualization techniques, we capture the complexity of the relationship between beer consumption and societal well-being, shedding light on patterns and trends that extend beyond traditional mapping approaches. This holistic approach enables us to convey nuanced insights while effectively communicating variability and uncertainty within the data."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Personal Blog!",
+    "section": "",
+    "text": "Alcohol and Society\n\n\n\n\n\n\n\nstatistics\n\n\nworld\n\n\n\n\n\n\n\n\n\n\n\nFeb 22, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nHas Formula 1 Become Slower?\n\n\n\n\n\n\n\nracing\n\n\ncars\n\n\n\n\n\n\n\n\n\n\n\nFeb 8, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 31, 2024\n\n\nGeorge Charalambous\n\n\n\n\n\n\nNo matching items"
   }
 ]

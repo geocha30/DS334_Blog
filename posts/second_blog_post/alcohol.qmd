@@ -9,7 +9,7 @@ fig-width: 10
 fig-height: 6
 ---
 
-"In dog beers, I've only had one."
+## "In dog beers, I've only had one."
 
 ## Introduction
 
