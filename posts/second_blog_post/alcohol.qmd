@@ -9,6 +9,8 @@ fig-width: 10
 fig-height: 6
 ---
 
+"In dog beers, I've only had one."
+
 ## Introduction
 
 So, you know how we are always curious about how our choices affect our happiness and overall well-being? Well, one area that's been getting a lot of attention in social science research lately is the relationship between alcohol consumption and how we feel about our lives.
