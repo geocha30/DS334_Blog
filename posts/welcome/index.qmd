@@ -5,7 +5,7 @@ date: "2024-01-31"
 categories: [news]
 ---
 
-Welcome to my personal blog! I am George Charalambous, an international student athlete majoring in Data Science at St. Lawrence University. 
+Welcome to my personal blog! I am George Charalambous, an international student athlete majoring in Data Science at St. Lawrence University. Embracing leadership from commanding a squadron in the National Army of Cyprus to steering victories as captain of the Men’s Varsity Soccer Team, my journey embodies adaptability and resilience. With a robust foundation in data analytics cultivated through intern roles at The World Bank Group and Peterson's Quantitative Resource Center, I am capable of thriving in Data Science and quantitative roles, in general, capable to navigate multifaceted challenges. Beyond the realms of sports and military service, my passion for financial analysis shines as I guide investment decisions for a $150,000 portfolio with precision and foresight. As I chart my course in Data Science at St. Lawrence University, I merge academic prowess, global perspectives, and a relentless drive to innovate.
 
 ![](field.jpeg)
 
