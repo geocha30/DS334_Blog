@@ -4,16 +4,16 @@ image: profile.jpg
 about:
   template: jolla
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
+    - icon: email
+      text: E-mail
+      href: gcharalambous2@gmail.com
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: linkedin.com/in/geocha21
     - icon: github
       text: Github
-      href: https://github.com
+      href: geocha30.github.io/DS334_Blog/
 
 ---
 
-About this blog
+Welcome to my Blog! Through the lenses of an upcoming data scientist, this blog's preliminary stage was constructed within the context of the Data Visualization course at St. Lawrence University. Utilizing tools like R and RStudio, this blog covers a wide range of topics, including racing and Formula 1, to trends in the "Wordle" solutions! All these researches are introductory, therefore showing the foundations upon which my data science journey is built. As I continue to explore the depths of data analysis and visualization, I hope to expand my analysis and delve into more intricate data sets regarding real-world issues, looking to make an impact through my subject of interest. But this journey isn't meant to be solitary. I warmly welcome and encourage you, the reader, to join me on this expedition!
