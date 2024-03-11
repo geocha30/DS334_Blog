@@ -9,10 +9,10 @@ about:
       href: gcharalambous2@gmail.com
     - icon: linkedin
       text: LinkedIn
-      href: linkedin.com/in/geocha21
+      href: https://linkedin.com/in/geocha21
     - icon: github
       text: Github
-      href: geocha30.github.io/DS334_Blog/
+      href: https://geocha30.github.io/DS334_Blog/
 
 ---
 
