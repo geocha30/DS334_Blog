@@ -164,9 +164,12 @@ Moving on, GDP-per-capita and generosity enter the discussion. According to the 
 
 ```{r GDP-per-Capita}
 #| warning: false
-ggplot(top_consumers_data, aes(x = beer_servings, y = `Logged GDP per capita`, color = country, label = country)) +
+library(plotly)
+beer_gdp_scat <- 
+  ggplot(top_consumers_data, aes(x = beer_servings, y = `Logged GDP per capita`, label = country, 
+                                 color = country)) +
   geom_point() +
-  geom_label(size = 4) +
+  geom_label( size = 4) +
   labs(
     title = "Beer Consumption vs. GDP per Capita",
     x = "Beer Servings",
@@ -181,9 +184,12 @@ ggplot(top_consumers_data, aes(x = beer_servings, y = `Logged GDP per capita`, c
         axis.text = element_text(size = 12),
         legend.title = element_text(size = 12),
         legend.text = element_text(size = 10),
+        legend.position = "none", 
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.border = element_blank())
+
+ggplotly(beer_gdp_scat, tooltip = "color")
 ```
 
 ```{r Generosity}
