@@ -1,6 +1,7 @@
 ---
 title: "We need more Data!"
 author: "George Charalambous"
+date: "2024-05-08" 
 categories: [world, news, machine learning, data]
 image: "world_bank_logo.jpeg"
 execute: 
@@ -328,21 +329,9 @@ ranges <- sapply(scaled_data_with_undev[, numeric_cols], function(x) {
 })
 ```
 
-```{r}
-#| output: false
-underdeveloped <- scaled_data_with_undev |>
-  filter(Underdeveloped == 1)
-```
+#### First Attempt 
 
 ```{r}
-#| echo: false
-#| output: false
-developed <- scaled_data_with_undev |>
-  filter(Underdeveloped != 1) 
-```
-
-```{r}
-#| echo: false
 #| output: false
 # Fit the logistic regression model with selected variables using their range and the median for the rest
 # Used the first model to come up with the most "significant" ones
@@ -368,8 +357,6 @@ grid <- full_stats_df |>
 aug_model <- augment(model_glm, newdata = grid, se_fit = TRUE) |>
   mutate(.predprob = plogis(.fitted))
 ```
-
-#### First Attempt 
 
 ```{r}
 #| echo: false
@@ -467,21 +454,18 @@ After some experimenting with the hyperparameters, this models has reached a 95.
 The first map represents the actual classification of underdeveloped countries, filled with a blue color. The second map represents the predicted outcomes of our neural network, with the predicted underdeveloped countries highlighted with a dark red color. 
 
 ```{r}
-#| echo: false
 #| output: false
 total_countries <- full_stats_df |>
   select(`Country Name`)
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 full_means_df <- full_means_df |>
   cbind(total_countries)
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 total_countries_no_na <- full_means_df |>
   na.omit() |>
@@ -489,7 +473,6 @@ total_countries_no_na <- full_means_df |>
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 scaled_data_with_undev_arranged <- scaled_data_with_undev |>
   cbind(total_countries_no_na) |>
@@ -498,13 +481,11 @@ scaled_data_with_undev_arranged <- scaled_data_with_undev |>
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 predictions <- read.csv("data/predicted_dataset.csv")
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 predictions <- predictions |>
   arrange(mean_agr_land) |>
@@ -512,7 +493,6 @@ predictions <- predictions |>
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 underdeveloped_map <- world_df |>
   mutate(Underdeveloped = as.factor(ifelse(region %in% countries, 1, 0)))
@@ -533,14 +513,12 @@ ggplotly(plot_1, tooltip = "label")
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 predictions <- predictions |>
   mutate(Underdeveloped = ifelse(Predicted_output >= 0.5, 1, 0))
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 predicted_full_df <- left_join(predictions, world_df, by = c("Country Name" = "region"))
 ```
@@ -565,7 +543,6 @@ ggplotly(plot_2, tooltip = "label")
 While the maps above indicate that the network does an exceptional job given the classification task provided, the table below raises some concerns. According to the table below, the model classified 51 countries as underdeveloped, when there are only 42. On the other hand, the model classified 176 countries as developed, close to their real number of 185. This suggests that while the model performs relatively well in identifying developed countries, it struggles more with accurately classifying underdeveloped ones. Proportionally speaking, the model had a successful classification rate of 95.14% for developed countries, falling to 82.35% for underdeveloped ones. This result stresses the initial question this project was aimed to answer: THERE IS NOT ENOUGH DATA FOR UNDERDEVELOPED COUNTRIES. Therefore, with insufficient data to work with, the provision of accurate and precise solutions for countries in the underdeveloped category seems far from reality. 
 
 ```{r}
-#| echo: false
 #| output: false
 summary_actual <- scaled_data_with_undev |>
   summarise(Underdeveloped = sum(Underdeveloped), 
@@ -573,7 +550,6 @@ summary_actual <- scaled_data_with_undev |>
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 summary_predicted <- predictions |>
   summarise(Underdeveloped = sum(Underdeveloped), 
@@ -581,7 +557,6 @@ summary_predicted <- predictions |>
 ```
 
 ```{r}
-#| echo: false
 library(pander)
 
 # Convert summaries to data frames
