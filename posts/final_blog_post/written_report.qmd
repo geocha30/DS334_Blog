@@ -261,7 +261,6 @@ full_stats_df <-
 | total_unemployment | The share of the labor force that is without work but available for and seeking employment |
 
 ```{r}
-# Confusion Matrix
 #| output: false
 #| echo: false
 library(GGally)
@@ -520,7 +519,6 @@ underdeveloped_map <- world_df |>
 ```
 
 ```{r}
-#| echo: false
 plot_1 <- ggplot()+
   geom_polygon(data = world_df, mapping = aes(x = long, y = lat, group = group, label = region), fill = "grey")+
   geom_polygon(data = underdeveloped_map, mapping = aes(x = long, y = lat, group = group, fill = Underdeveloped, label = region))+
@@ -548,7 +546,6 @@ predicted_full_df <- left_join(predictions, world_df, by = c("Country Name" = "r
 ```
 
 ```{r}
-#| echo: false
 plot_2 <- ggplot()+
   geom_polygon(data = world_df, mapping = aes(x = long, y = lat, group = group, label = region), fill = "grey")+
     geom_polygon(data = predicted_full_df, mapping = aes(x = long, y = lat, group = group, fill = as.factor(Underdeveloped), 
@@ -566,8 +563,6 @@ ggplotly(plot_2, tooltip = "label")
 ## Conclusion
 
 While the maps above indicate that the network does an exceptional job given the classification task provided, the table below raises some concerns. According to the table below, the model classified 51 countries as underdeveloped, when there are only 42. On the other hand, the model classified 176 countries as developed, close to their real number of 185. This suggests that while the model performs relatively well in identifying developed countries, it struggles more with accurately classifying underdeveloped ones. Proportionally speaking, the model had a successful classification rate of 95.14% for developed countries, falling to 82.35% for underdeveloped ones. This result stresses the initial question this project was aimed to answer: THERE IS NOT ENOUGH DATA FOR UNDERDEVELOPED COUNTRIES. Therefore, with insufficient data to work with, the provision of accurate and precise solutions for countries in the underdeveloped category seems far from reality. 
-
-This project encourages people and myself included, to utilize it as a starting point and attempt to create a larger data set, covering a wider range of variables to produce a more accurate classifier. In addition to that, one can examine the sectors of a country that there is urgent need for more data and suggest strategies that would results to the consolidation of useful insights, leading to more targeted and sufficient research. 
 
 ```{r}
 #| echo: false
@@ -604,7 +599,7 @@ pander(combined_summary, caption = "Summary of Actual and Predicted Classes")
 
 ```
 
-
+This project encourages people and myself included, to utilize it as a starting point and attempt to create a larger data set, covering a wider range of variables to produce a more accurate classifier. In addition to that, one can examine the sectors of a country that there is urgent need for more data and suggest strategies that would results to the consolidation of useful insights, leading to more targeted and sufficient research. 
 
 
 
