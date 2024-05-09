@@ -12,22 +12,15 @@ format:
     table-of-contents: true
 ---
 
-## Abstract 
-
-This project could represent the minimal work conducted on underdeveloped countries and subsequently answer the question for the existence of sufficient data regarding underdeveloped countries, with the answer being a loud "NO". Utilizing variables from The World Bank Data Repository, the project explores socio-economic indicators such as agricultural land, electricity access, fertility rate, internet usage, sanitation, population growth, primary school enrollment, and total unemployment. Despite challenges in data availability, logistic regression and neural network models are employed to predict a country's development status. Initial attempts with logistic regression reveal limited success due to the complexity of relationships between variables. A neural network model is subsequently developed using a Collab Notebook, demonstrating promising results. The project concludes with insights into the need for more comprehensive and more data as a quantity, and the potential of advanced modeling techniques to address underdevelopment effectively. 
-
 ## Introduction
 
 Being an intern with the Sub-Saharan Africa Poverty Team with the World Bank Group last summer, I realized that the lack of data regarding underdeveloped countries is something that needs to be addressed. This insufficient provision of data does not allow extensive research to be conducted and therefore lead to detailed solutions. 
 
 The purpose of this project is to "effectively" construct a classification model for underdeveloped countries, given a set of variables from [The World Bank Data Repository](https://data.worldbank.org/indicator). The initial selection of variables was indeed challenging, since most data sets would not contain enough data for underdeveloped countries, with `NA` values overwhelming the corresponding rows. Because of that, I decided to focus on the 21st century and ignore data before the year 2000. Two primary analytical approaches employed in this project are: logistic regression and neural networks.
 
-Logistic regression, a classical statistical method, is utilized to model the probability of a country being classified as underdeveloped based on its socio-economic indicators. By fitting a logistic regression model to the data, the project seeks to identify the key variables that significantly influence a country's development status. This approach provides interpretable results and insights into the relative importance of different indicators.
-
-In addition to logistic regression, the project also explores the application of neural networks, a more advanced machine learning technique. Neural networks offer the advantage of capturing complex, nonlinear relationships between predictors and the response variable. By designing and training neural network models, the project aims to uncover nuanced patterns and interactions within the data that may not be captured by traditional linear models like logistic regression.
-
 ```{r}
 #| output: false
+#| echo: false
 library(tidyverse)
 library(here)
 library(maps)
@@ -39,6 +32,7 @@ world_df <- map_data("world")
 
 ```{r}
 #| output: false
+#| echo: false
 electricity_access <- read_csv("data/access_to_electricity/access_to_electricity.csv", 
                         skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -46,11 +40,13 @@ electricity_access <- read_csv("data/access_to_electricity/access_to_electricity
 
 ```{r}
 #| output: false
+#| echo: false
 countries <- c("Afghanistan", "Angola", "Bangladesh", "Benin", "Burkina Faso", "Burundi", "Cambodia", "Central African Republic", "Chad", "Comoros", "Congo, Dem. Rep.", "Djibouti", "Eritrea", "Ethiopia", "Gambia, The", "Guinea", "Guinea-Bissau", "Haiti", "Kiribati", "Lao PDR", "Lesotho", "Liberia", "Madagascar", "Malawi", "Mali", "Mauritania", "Mozambique", "Myanmar", "Nepal", "Niger", "Rwanda", "Sao Tome and Principe", "Senegal", "Sierra Leone", "Solomon Islands", "Somalia", "South Sudan", "Sudan", "Tanzania", "Timor-Leste", "Togo", "Tuvalu", "Uganda", "Yemen, Rep.", "Zambia")
 ```
 
 ```{r}
 #| output: false
+#| echo: false
 electricity_stats <- electricity_access |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -63,6 +59,7 @@ electricity_stats <- electricity_access |>
 
 ```{r}
 #| output: false
+#| echo: false
 underdeveloped_electricity <- electricity_access |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -72,11 +69,13 @@ underdeveloped_electricity <- electricity_access |>
 
 ```{r}
 #| output: false
+#| echo: false
 underdeveloped_map <- left_join(underdeveloped_electricity, world_df, by = c("Country Name"="region"))
 ```
 
 ```{r}
 #| output: false
+#| echo: false
 agricultural_land <- read_csv("data/agricultural_land/agricultural_land.csv", 
                        skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -84,6 +83,7 @@ agricultural_land <- read_csv("data/agricultural_land/agricultural_land.csv",
 
 ```{r}
 #| output: false
+#| echo: false
 agriculture_land_stats <- agricultural_land |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -96,6 +96,7 @@ agriculture_land_stats <- agricultural_land |>
 
 ```{r}
 #| output: false
+#| echo: false
 population_growth <- read_csv("~/Desktop/Sixth Semester/ds334_final_project/ds334_final_project/data/population_growth_annual/population_growth.csv", 
                             skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -103,6 +104,7 @@ population_growth <- read_csv("~/Desktop/Sixth Semester/ds334_final_project/ds33
 
 ```{r}
 #| output: false
+#| echo: false
 population_growth_stats <- population_growth |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -115,6 +117,7 @@ population_growth_stats <- population_growth |>
 
 ```{r}
 #| output: false
+#| echo: false
 primary_school_enrol <- read_csv("~/Desktop/Sixth Semester/ds334_final_project/ds334_final_project/data/primary_school_enrollment/primary_school.csv", 
           skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -122,6 +125,7 @@ primary_school_enrol <- read_csv("~/Desktop/Sixth Semester/ds334_final_project/d
 
 ```{r}
 #| output: false
+#| echo: false
 primary_school_enrol_stats <- primary_school_enrol |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -134,6 +138,7 @@ primary_school_enrol_stats <- primary_school_enrol |>
 
 ```{r}
 #| output: false
+#| echo: false
 total_unemployment <- read_csv("~/Desktop/Sixth Semester/ds334_final_project/ds334_final_project/data/total_unemployment/total_unemployment.csv", 
           skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -141,6 +146,7 @@ total_unemployment <- read_csv("~/Desktop/Sixth Semester/ds334_final_project/ds3
 
 ```{r}
 #| output: false
+#| echo: false
 total_unemployment_stats <- total_unemployment |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -153,6 +159,7 @@ total_unemployment_stats <- total_unemployment |>
 
 ```{r}
 #| output: false
+#| echo: false
 sanitation <- read_csv("data/basic_sanitation_services/basic_sanitation.csv", 
           skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -160,6 +167,7 @@ sanitation <- read_csv("data/basic_sanitation_services/basic_sanitation.csv",
 
 ```{r}
 #| output: false
+#| echo: false
 sanitation_stats <- sanitation |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -172,6 +180,7 @@ sanitation_stats <- sanitation |>
 
 ```{r}
 #| output: false
+#| echo: false
 fertility_rate <- read_csv("data/fertility_rate/fertility_rate.csv", 
           skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -179,6 +188,7 @@ fertility_rate <- read_csv("data/fertility_rate/fertility_rate.csv",
 
 ```{r}
 #| output: false
+#| echo: false
 fertility_rate_stats <- fertility_rate |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -191,6 +201,7 @@ fertility_rate_stats <- fertility_rate |>
 
 ```{r}
 #| output: false
+#| echo: false
 internet <- read_csv("data/internet/internet.csv", 
           skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -198,6 +209,7 @@ internet <- read_csv("data/internet/internet.csv",
 
 ```{r}
 #| output: false
+#| echo: false
 internet_stats <- internet |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -210,6 +222,7 @@ internet_stats <- internet |>
 
 ```{r}
 #| output: false
+#| echo: false
 birth_life_exp <- read_csv("data/life_expectancy_birth/life_expectancy_birth.csv", 
           skip = 4) |>
   select(-c(3:44), -c(67:69))
@@ -217,6 +230,7 @@ birth_life_exp <- read_csv("data/life_expectancy_birth/life_expectancy_birth.csv
 
 ```{r}
 #| output: false
+#| echo: false
 birth_life_exp_stats <- birth_life_exp |>
   pivot_longer(c(3:24), 
                names_to = "Year", 
@@ -229,6 +243,7 @@ birth_life_exp_stats <- birth_life_exp |>
 
 ```{r}
 #| output: false
+#| echo: false
 full_stats_df <- agriculture_land_stats |>
   left_join(birth_life_exp_stats, by = "Country Name") |>
   left_join(electricity_stats, by = "Country Name") |>
@@ -242,12 +257,15 @@ full_stats_df <- agriculture_land_stats |>
 
 ```{r}
 #| output: false
+#| echo: false
 full_stats_df <- 
   full_stats_df |>
   mutate(Underdeveloped = ifelse(`Country Name` %in% countries, 1, 0))
 ```
 
 ## Variable Description
+
+After loading all the appropriate data sets from the World Bank Repository, we end up with a data set that contains the means and standard deviations of the variables below:
 
 | Variable | Description                            |
 |----------|----------------------------------------
@@ -268,16 +286,13 @@ library(GGally)
 ggpairs(data = full_stats_df, columns = c(2, 4, 6, 8, 10, 12, 14, 16, 18))
 ```
 
-## Logistic Regression Model Attempt
+## Logistic Regression Model Attempts
 
-The first attempt of creating a classifier comes through the use of logistic regression models. This modelling method was chosen as the initial one, as it does an exceptional job with handling such diverse data sets resulting to high interpretability, computational efficiency, and flexibility. 
-
-The first step into selecting the variables for these models includes an exploratory analysis of our data set, utilizing a pairwise plot matrix, as well as looking at the full summary of the first implementation of the model to identify significant variables. Through this process, potential correlations and patterns were highlighted, giving an idea of the parameters that might be useful to include in our models. Moving on, this models would utilize a data set that includes the means of all the variables included in this data set, after they have been normalized and scaled for a universal baseline. 
-
-The models were trained on an augmented data set, generating variable ranges and applying the initial model to make predictions regarding the development status of a country. These variables' ranges are used in combination with median values for the remaining predictors to construct a grid for prediction. This separation of median values and ranges is done for visualization and interpretation purposes. This grid represents a range of values for each variable of interest. With the logistic regression model trained on the selected variables, predictions are made on this grid to estimate the probability of a country being classified as underdeveloped. 
+The initial attempt to create a classifier began with logistic regression models due to their interpretability, computational efficiency, and flexibility in handling diverse datasets. The process involved an exploratory analysis of the dataset, identifying significant variables through pairwise plots and model summaries. The models were trained on a normalized and scaled dataset, augmented with variable ranges for prediction. However, the visualizations showed that logistic regression models with different combinations of proxies were insufficient to capture the complexities of the data. This suggests limitations in using simple models to interpret the relationships between variables. Hence, further exploration of more complex modeling approaches is warranted to better understand these relationships and improve classification accuracy.
 
 ```{r}
 #| output: false
+#| echo: false
 # Get the means column for each variable
 full_means_df <- full_stats_df |>
   select(contains("mean"))
@@ -294,6 +309,7 @@ scaled_data_with_undev <- scaled_data |>
 
 ```{r}
 #| output: false
+#| echo: false
 median_agr_land = median(scaled_data_with_undev$mean_agr_land, na.rm = TRUE)
 median_life_exp = median(scaled_data_with_undev$mean_life_exp, na.rm = TRUE)
 median_elec_access = median(scaled_data_with_undev$mean_elec_access, na.rm = TRUE)
@@ -307,6 +323,7 @@ median_internet = median(scaled_data_with_undev$mean_inter, na.rm = TRUE)
 
 ```{r}
 #| output: false
+#| echo: false
 library(modelr)
 ## First Attempt
 # Fit the logistic regression model with all the variables
@@ -319,6 +336,7 @@ summary(model_glm)
 
 ```{r}
 #| output: false
+#| echo: false
 # Identify numeric columns
 numeric_cols <- sapply(scaled_data_with_undev, is.numeric)
 
@@ -328,8 +346,6 @@ ranges <- sapply(scaled_data_with_undev[, numeric_cols], function(x) {
   c(min(x), max(x))
 })
 ```
-
-#### First Attempt 
 
 ```{r}
 #| output: false
@@ -368,10 +384,7 @@ ggplot(data = aug_model, aes(x = mean_fert_rate, y = .predprob)) +
   theme_minimal()
 ```
 
-In this attempt, a logistic regression model is fitted using all available variables to predict whether a country is underdeveloped. The model is trained on the entire feature set, but for visualization and interpretation purposes, sequences of the mean life expectancy, mean fertility rate, and mean population growth are generated to explore their relationships. The remaining variables are held constant at their median values. Although the resulting graphic exhibits a smooth shape, it struggles to effectively capture the model's fit. Notably, the varying lines representing different levels of mean electricity access show some discrepancies against the different mean fertility rates, suggesting distinctions among countries with very low or very high mean electricity access. 
-
 ```{r}
-#| echo: false
 #| output: false
 # Fit the logistic regression model with selected variables using their range and the median for the rest
 # Used the first model to include the ones that were significant but not as much
@@ -394,10 +407,6 @@ aug_model <- augment(model_glm, newdata = grid, se_fit = TRUE) |>
   mutate(.predprob = plogis(.fitted))
 ```
 
-## Second and Third Attempts
-
-In these subsequent attempts, the models are trained using the entire feature set, but sequences of the mean life expectancy, mean fertility rate, and mean population growth are specifically generated for visualization and interpretation. Other variables are held constant at their median values. Despite the smooth appearance of the resulting graphics, the models struggle to fully capture the data's complexity. Notably, when examining the relationship between mean fertility rate and predicted probability, variations across different levels of mean population growth and mean internet access are observed, indicating potential distinctions among countries with varying development statuses.
-
 ```{r}
 #| echo: false
 # Visualize the predictions
@@ -409,7 +418,6 @@ ggplot(data = aug_model, aes(x = mean_fert_rate, y = .predprob)) +
 ```
 
 ```{r}
-#| echo: false
 #| output: false
 # Fit the logistic regression model with selected variables using their range and the median for the rest
 # Used the first model to include the ones that were significant but not as much
@@ -442,31 +450,29 @@ ggplot(data = aug_model, aes(x = mean_fert_rate, y = .predprob)) +
   theme_minimal()
 ```
 
-The visualizations from the plots above suggest that attempting to fit a Logistic Regression Model with different combinations of proxies does not yield satisfactory results. This indicates the potential limitations of using a simple model to capture the complexities of the data. Therefore, it might be beneficial to explore more complex modeling approaches that can better interpret the relationships between the various variables included in the analysis.
-
 ## Neural Network Application
 
-Due to the disappointing results from the application of logistic regression models, this next attempt incorporates a much more complex classification model used in machine learning, a neural network. It is a method that teaches computers to process data in a way that is inspired by the human brain. Due to the complexity of our data set, this model, by incorporating its entirety, might be able to capture the significant relationships among the variables and produce somewhat accurate results regarding the classification of countries regarding their development status. This neural network was developed and trained on a Colab Notebook, which created the predicted data set which was then loaded into this project.
-
-The data is first split into training and testing sets. Then, a sequential neural network model is constructed with several dense layers, each employing a RELU activation function. The final layer uses a sigmoid activation function to produce binary classification predictions for an observation (Underdeveloped or Developed). The model is compiled with the Adam optimizer, binary cross-entropy loss function, and accuracy metric. Subsequently, the network is trained on the training data for 100 epochs. The training progress is monitored using the history object to track metrics such as accuracy and loss over epochs.
-After some experimenting with the hyperparameters, this models has reached a 95.65% accuracy, indicating a very good performance which can be seen below in the map.
+Due to the disappointing results from the application of logistic regression models, this next attempt incorporates a much more complex classification model, a neural network: a machine learning technique inspired by the human brain's processing of data. The neural network, developed and trained on a Colab Notebook, is applied to generate predictions for the complex dataset. Initially, the data is split into training and testing sets, followed by the construction of a neural network model with dense layers utilizing RELU activation functions and a final layer employing a sigmoid function for binary classification of countries into the two development categories. The model resulted to a remarkable 95.65% accuracy and this promising performance's is reflected in the visual representation of the results.
 
 The first map represents the actual classification of underdeveloped countries, filled with a blue color. The second map represents the predicted outcomes of our neural network, with the predicted underdeveloped countries highlighted with a dark red color. 
 
 ```{r}
 #| output: false
+#| echo: false
 total_countries <- full_stats_df |>
   select(`Country Name`)
 ```
 
 ```{r}
 #| output: false
+#| echo: false
 full_means_df <- full_means_df |>
   cbind(total_countries)
 ```
 
 ```{r}
 #| output: false
+#| echo: false
 total_countries_no_na <- full_means_df |>
   na.omit() |>
   select(`Country Name`)
@@ -474,6 +480,7 @@ total_countries_no_na <- full_means_df |>
 
 ```{r}
 #| output: false
+#| echo: false
 scaled_data_with_undev_arranged <- scaled_data_with_undev |>
   cbind(total_countries_no_na) |>
   arrange(mean_agr_land)|>
@@ -487,6 +494,7 @@ predictions <- read.csv("data/predicted_dataset.csv")
 
 ```{r}
 #| output: false
+#| echo: false
 predictions <- predictions |>
   arrange(mean_agr_land) |>
   cbind(`Country Name` = scaled_data_with_undev_arranged$`Country Name`)
@@ -494,6 +502,7 @@ predictions <- predictions |>
 
 ```{r}
 #| output: false
+#| echo: false
 underdeveloped_map <- world_df |>
   mutate(Underdeveloped = as.factor(ifelse(region %in% countries, 1, 0)))
 ```
@@ -514,12 +523,14 @@ ggplotly(plot_1, tooltip = "label")
 
 ```{r}
 #| output: false
+#| echo: false
 predictions <- predictions |>
   mutate(Underdeveloped = ifelse(Predicted_output >= 0.5, 1, 0))
 ```
 
 ```{r}
 #| output: false
+#| echo: false
 predicted_full_df <- left_join(predictions, world_df, by = c("Country Name" = "region"))
 ```
 
@@ -544,6 +555,7 @@ While the maps above indicate that the network does an exceptional job given the
 
 ```{r}
 #| output: false
+#| echo: false
 summary_actual <- scaled_data_with_undev |>
   summarise(Underdeveloped = sum(Underdeveloped), 
             Developed = n() - Underdeveloped)
@@ -551,6 +563,7 @@ summary_actual <- scaled_data_with_undev |>
 
 ```{r}
 #| output: false
+#| echo: false
 summary_predicted <- predictions |>
   summarise(Underdeveloped = sum(Underdeveloped), 
             Developed = n() - Underdeveloped)
